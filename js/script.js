@@ -50,12 +50,13 @@ function setGameElements(){
 					
 			break;
 		case 'ended':
-				newGameBtn.innerText = 'Play again';
+				newGameBtn.innerText = 'Play again';				
 		case 'notStarted':
 		default:
 			newGameElem.style.display = 'block';
 			pickElem.style.display = 'none';
 			resultsElem.style.display ='none';
+
 	}
 }
 
@@ -72,11 +73,13 @@ function newGame(){
 		gameState = 'started';
 		setGameElements();
 
-	
 	playerNameElem.innerHTML = player.name;
 	setGamePoints();
 	}
-	
+	playerPickElem.innerHTML = 'Player selection';
+	computerPickElem.innerHTML = 'Computer selection';
+	computerResultElem.innerHTML = 'Computer Score';
+	playerResultElem.innerHTML = 'Player Score';
 }
 
 
@@ -120,8 +123,8 @@ function checkRoundWinner(playerPick, computerPick) {
   			computer.score++;
  			computerResultElem.innerHTML = "Win!";
  	}else {
- 		player.score++;
- 		playerResultElem.innerHTML = "Win!";
+	 		player.score++;
+	 		playerResultElem.innerHTML = "Win!";
  	} 
 
 	setGamePoints();
@@ -137,8 +140,7 @@ function setGamePoints() {
 function checkGameEnd(){
 	if(computer.score == 10){
 		alert("You lost! :( ");
-		gameState = 'ended';
-		
+		gameState = 'ended';		
 		setGameElements();
 
 		
