@@ -138,7 +138,7 @@ function checkGameEnd(){
 	if(computer.score == 10){
 		alert("You lost! :( ");
 		gameState = 'ended';
-		computerPickElem.innerHTML = computerPick;
+		
 		setGameElements();
 
 		
